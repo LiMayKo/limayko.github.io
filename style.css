@@ -1,0 +1,58 @@
+#board {
+  width: 683px;
+  height: 481px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile {
+  display: inline-flex;
+  width: 20%;
+  height: 20%;
+  text-align: center;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background-image: url('ffcard.webp');
+  background-size: cover;
+}
+
+.card .back {
+  background-color: #ddd;
+  transform: rotateY(180deg);
+}
+
+.card .back label {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
