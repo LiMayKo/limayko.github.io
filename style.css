@@ -1,0 +1,144 @@
+#board {
+  width: 683px;
+  height: 481px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile {
+  display: inline-flex;
+  width: 20%;
+  height: 20%;
+  text-align: center;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background-image: url('ffcard.webp');
+  background-size: cover;
+}
+
+.card .back {
+  background-color: #ddd;
+  transform: rotateY(180deg);
+}
+
+.card .back label {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.718);
+}
+
+.modal-content {
+
+  margin: 15% auto;
+
+
+  width: 300px;
+
+}
+
+.card-choice {
+
+
+  padding: 10vw;
+  padding: 10vh;
+
+  cursor: pointer;
+  background-image: url('ffcard.webp');
+  background-size: cover;
+  width: 20%;
+  height: 100%;
+  
+}
+
+
+
+ /* CSS styles for the modal */
+ .disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(124, 207, 42, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  margin: 15% auto;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+
+}
+
+.modal-card {
+  white-space: nowrap;
+  text-indent: -9999px;  
+  overflow: hidden;
+  padding: 10vh;
+
+  cursor: pointer;
+  background-image: url('ffcard.webp');
+  background-size: cover;
+  width: 20%;
+ 
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
